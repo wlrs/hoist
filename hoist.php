@@ -20,22 +20,38 @@ class hoist{
         $page['active'] = false;
         if(!array_key_exists('headline', $page)) $page['headline'] = $page['title'];
         if(!array_key_exists('override', $page)) $page['override'] = false;
+        
         $page['url'] = $this->strip_trailing_slash($page['url']);
-        if($page['url'] == $this->active_url){
-            $page['active'] = true;
-            $this->active_page = $page;
-        }
+        $page['type'] = $this->process_page_types($page);
+        
         $this->pages[] = $page;
 
-        if(!is_array($page['type'])) $page['type'] = array($page['type']);
+        if($page['url'] == $this->active_url) $this->active_url = $page['url'];
+
         foreach ($page['type'] as $type) {
-            if(!array_key_exists('$type', $this->page_types)){
+            if(!array_key_exists($type, $this->page_types)){
                 $this->page_types[$type] = array();
             }
             $title_override = $page[$type . '_title'];
             if($title_override) $page['title'] = $page[$type . '_title'];
             $this->page_types[$type][] = $page;
         }
+    }
+
+    function process_page_types($page){
+        //type might be a string or an array (or unset)
+        $types = array();
+        if(array_key_exists('type', $page)) $types = $page['type'];
+        if(is_string($types) && strlen($types)) $types = array($types);
+
+        //add this page to any types that is has a title for
+        foreach($page as $key=>$value){
+            if(preg_match("/^(.+)_title$/", $key, $matches)){
+                $types[] = $matches[1];
+            }
+        }
+
+        return array_unique($types);
     }
 
     function strip_trailing_slash($string = ''){
