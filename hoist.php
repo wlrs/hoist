@@ -33,16 +33,17 @@ class hoist{
             die();
         }
 
+        $page['active'] = false;
         if(!array_key_exists('headline', $page)) $page['headline'] = $page['title'];
         if(!array_key_exists('override', $page)) $page['override'] = false;
 
         $page['url'] = $this->strip_trailing_slash($page['url']);
+        if($page['url'] == $this->active_url && !$this->active_page){
+            $this->active_page = $page;
+            $page['active'] = true;
+        }
         $page['groups'] = $this->process_groups($page);
         $this->pages[] = $page;
-
-        if($page['url'] == $this->active_url && !$this->active_page){
-            $this->active_page = $page['url'];
-        }
 
         foreach ($page['groups'] as $group) {
             if(!array_key_exists($group, $this->groups)){
@@ -92,5 +93,4 @@ class hoist{
         print_r($o);
         echo "</pre><br />";
     }
-
 }

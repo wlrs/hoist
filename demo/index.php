@@ -5,25 +5,25 @@ $pages = array(
         'url'               =>  '/',
         'title'             =>  'Hoist',
         'content'           =>  'pages/home.php',
-        'groups'            =>  'header_nav'
+        'groups'            =>  'header_nav',
+        'header_nav_title'  =>  'Overview'
     ),
     array(
         'url'               =>  '/examples',
         'title'             =>  'Examples',
-        'content'           =>  'pages/home.php',
+        'content'           =>  'pages/examples.php',
         'groups'            =>  'header_nav'
     ),
     array(
         'url'               =>  '/pages',
         'title'             =>  'Pages',
-        'groups'            =>  'pages/pages.php'
+        'content'            =>  'pages/pages.php'
     ),
     array(
         'url'               =>  '/groups',
         'title'             =>  'Groups',
-        'groups'            =>  'pages/groups.php'
-    ),
-
+        'content'            =>  'pages/groups.php'
+    )
 );
 
 require 'hoist.php';
