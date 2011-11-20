@@ -1,6 +1,6 @@
 <?
 
-class Hoist{
+class hoist{
     public $active_url = false;
     public $active_page = false;
     public $page_types = array();
@@ -45,7 +45,11 @@ class Hoist{
     }
 
     function display($page = false){
-        if($page) $page = $this->active_page;
+        if(!$page) $page = $this->active_page;
+        if(!$page){
+            header('HTTP/1.0 404 Not Found');
+            die('error: no page to display');
+        }
         if(!$page['override']) require $this->template_dir . 'header.php';
         require $this->page_dir . $page['content'];
         if(!$page['override']) require $this->template_dir . 'footer.php';
