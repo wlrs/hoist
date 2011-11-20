@@ -17,16 +17,19 @@ class hoist{
     }
 
     function process_page($page = array()){
-        $page['active'] = false;
+        if(!array_key_exists('url', $page)){
+            echo "No url for this page:";
+            $this->d($page);
+            die();
+        }
         if(!array_key_exists('headline', $page)) $page['headline'] = $page['title'];
         if(!array_key_exists('override', $page)) $page['override'] = false;
-        
+
         $page['url'] = $this->strip_trailing_slash($page['url']);
         $page['type'] = $this->process_page_types($page);
-        
         $this->pages[] = $page;
 
-        if($page['url'] == $this->active_url) $this->active_url = $page['url'];
+        if($page['url'] == $this->active_url) $this->active_page = $page['url'];
 
         foreach ($page['type'] as $type) {
             if(!array_key_exists($type, $this->page_types)){
@@ -69,5 +72,11 @@ class hoist{
         if(!$page['override']) require $this->template_dir . 'header.php';
         require $this->page_dir . $page['content'];
         if(!$page['override']) require $this->template_dir . 'footer.php';
+    }
+
+    function d($o){
+        echo "<pre>";
+        print_r($o);
+        echo "</pre><br />";
     }
 }
