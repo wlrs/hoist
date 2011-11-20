@@ -5,15 +5,36 @@ class Hoist{
     public $active_page = false;
     public $page_types = array();
     public $pages = array();
+    public $template_dir = '';
+    public $page_dir = '';
 
     function __construct($raw_pages = array()){
         $this->active_url = $this->strip_trailing_slash($_SERVER['REQUEST_URI']);
 
         foreach($raw_pages as $page){
-            if(!array_key_exists('menu_title', $page)) $page['menu_title'] = $page['title'];
-            if(!array_key_exists('h2', $page)) $page['h2'] = $page['title'];
-            $page['url'] = $this->strip_trailing_slash($page['url']);
-            $this->pages[] = $page;
+            $this->process_page($page);            
+        }
+    }
+
+    function process_page($page = array()){
+        $page['active'] = false;
+        if(!array_key_exists('headline', $page)) $page['headline'] = $page['title'];
+        if(!array_key_exists('override', $page)) $page['override'] = false;
+        $page['url'] = $this->strip_trailing_slash($page['url']);
+        if($page['url'] == $this->active_url){
+            $page['active'] = true;
+            $this->active_page = $page;
+        }
+        $this->pages[] = $page;
+
+        if(!is_array($page['type'])) $page['type'] = array($page['type']);
+        foreach ($page['type'] as $type) {
+            if(!array_key_exists('$type', $this->page_types)){
+                $this->page_types[$type] = array();
+            }
+            $title_override = $page[$type . '_title'];
+            if($title_override) $page['title'] = $page[$type . '_title'];
+            $this->page_types[$type][] = $page;
         }
     }
 
@@ -23,9 +44,10 @@ class Hoist{
         return $string;
     }
 
-    function display(){
-        if(!$this->active_page['override']) require 'header.php';
-        require $this->$active_page['content'];
-        if(!$this->active_page['override']) require 'footer.php';
+    function display($page = false){
+        if($page) $page = $this->active_page;
+        if(!$page['override']) require $this->template_dir . 'header.php';
+        require $this->page_dir . $page['content'];
+        if(!$page['override']) require $this->template_dir . 'footer.php';
     }
 }
