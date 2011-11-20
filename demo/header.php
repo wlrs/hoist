@@ -18,7 +18,7 @@
         <div class="container">
           <a class="brand" href="/">Hoist</a>
           <ul class="nav">
-            <? foreach($this->groups['header_nav'] as $link){ ?>
+            <? foreach($hoist->groups['header_nav'] as $link){ ?>
                 <li<? if ($link['active']) echo ' class="active"'; ?>><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a></li>    
             <? } ?>
           </ul>
@@ -26,4 +26,10 @@
       </div>
     </div>
 
-    <h2><?=$page['title']?></h2>
+    <div class="container" style="margin-top: 40px;">
+
+        <? if($page['url'] != '/'){ ?>
+            <div class="inner">
+                <h1><?=$page['title']?></h1>
+            </div>
+        <? } ?>

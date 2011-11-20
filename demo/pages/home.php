@@ -1,0 +1,1 @@
+<h2>Because sometimes you just need to build a simple 5 page site you can host anywhere.</h2>

@@ -77,6 +77,8 @@ class hoist{
             header('HTTP/1.0 404 Not Found');
             die('error: no page to display');
         }
+
+        $hoist = $this;
         if(!$page['override']) require $this->header;
         require $page['content'];
         if(!$page['override']) require $this->footer;
