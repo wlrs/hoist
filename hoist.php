@@ -3,10 +3,11 @@
 class hoist{
     public $active_url = false;
     public $active_page = false;
-    public $page_types = array();
+    public $groups = array();
     public $pages = array();
-    public $template_dir = '';
-    public $page_dir = '';
+    public $header = 'header.php';
+    public $footer = 'footer.php';
+    public $required_fields = array('url', 'content');
 
     function __construct($raw_pages = array()){
         $this->active_url = $this->strip_trailing_slash($_SERVER['REQUEST_URI']);
@@ -17,50 +18,56 @@ class hoist{
     }
 
     function process_page($page = array()){
-        if(!array_key_exists('url', $page)){
-            echo "No url for this page:";
+        foreach($required_fields as $field){
+            if(!array_key_exists($field, $page)){
+                echo "No $field for this page:";
+                $this->d($page);
+                die();
+            }
+        }
+        
+        if(!file_exists($page['content'])){
+            echo "I can't find the content file for this page:";
             $this->d($page);
+            echo "If it helps, I'm trying to find it from here: " . $_SERVER['DOCUMENT_ROOT'];
             die();
         }
+
         if(!array_key_exists('headline', $page)) $page['headline'] = $page['title'];
         if(!array_key_exists('override', $page)) $page['override'] = false;
 
         $page['url'] = $this->strip_trailing_slash($page['url']);
-        $page['type'] = $this->process_page_types($page);
+        $page['groups'] = $this->process_groups($page);
         $this->pages[] = $page;
 
-        if($page['url'] == $this->active_url) $this->active_page = $page['url'];
+        if($page['url'] == $this->active_url && !$this->active_page){
+            $this->active_page = $page['url'];
+        }
 
-        foreach ($page['type'] as $type) {
-            if(!array_key_exists($type, $this->page_types)){
-                $this->page_types[$type] = array();
+        foreach ($page['groups'] as $group) {
+            if(!array_key_exists($group, $this->groups)){
+                $this->groups[$group] = array();
             }
-            $title_override = $page[$type . '_title'];
-            if($title_override) $page['title'] = $page[$type . '_title'];
-            $this->page_types[$type][] = $page;
+            $title_override = $page[$group . '_title'];
+            if($title_override) $page['title'] = $title_override;
+            $this->groups[$group][] = $page;
         }
     }
 
-    function process_page_types($page){
-        //type might be a string or an array (or unset)
-        $types = array();
-        if(array_key_exists('type', $page)) $types = $page['type'];
-        if(is_string($types) && strlen($types)) $types = array($types);
+    function process_groups($page){
+        //'groups' might be a string or an array (or unset)
+        $groups = array();
+        if(array_key_exists('groups', $page)) $groups = $page['groups'];
+        if(is_string($groups) && strlen($groups)) $groups = array($groups);
 
         //add this page to any types that is has a title for
         foreach($page as $key=>$value){
             if(preg_match("/^(.+)_title$/", $key, $matches)){
-                $types[] = $matches[1];
+                $groups[] = $matches[1];
             }
         }
 
-        return array_unique($types);
-    }
-
-    function strip_trailing_slash($string = ''){
-        $string = preg_replace("/\/+$/", '', $string);
-        if(!strlen($string)) $string = '/';
-        return $string;
+        return array_unique($groups);
     }
 
     function display($page = false){
@@ -69,9 +76,15 @@ class hoist{
             header('HTTP/1.0 404 Not Found');
             die('error: no page to display');
         }
-        if(!$page['override']) require $this->template_dir . 'header.php';
-        require $this->page_dir . $page['content'];
-        if(!$page['override']) require $this->template_dir . 'footer.php';
+        if(!$page['override']) require $this->header;
+        require $page['content'];
+        if(!$page['override']) require $this->footer;
+    }
+
+    function strip_trailing_slash($string = ''){
+        $string = preg_replace("/\/+$/", '', $string);
+        if(!strlen($string)) $string = '/';
+        return $string;
     }
 
     function d($o){
@@ -79,4 +92,5 @@ class hoist{
         print_r($o);
         echo "</pre><br />";
     }
+
 }
