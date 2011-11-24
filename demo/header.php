@@ -5,6 +5,8 @@
     <title><?=$page['title']?></title>
     
     <link href="/bootstrap.1.4.0.min.css" rel="stylesheet">
+    <link href="/prettify.css" rel="stylesheet">
+
     <!--
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
@@ -26,7 +28,7 @@
       </div>
     </div>
 
-    <div class="container" style="margin-top: 40px;">
+    <div class="container" style="margin-top: 60px;">
 
         <? if($page['url'] != '/'){ ?>
             <div class="inner">

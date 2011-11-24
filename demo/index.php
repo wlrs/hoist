@@ -17,12 +17,12 @@ $pages = array(
     array(
         'url'               =>  '/pages',
         'title'             =>  'Pages',
-        'content'            =>  'pages/pages.php'
+        'content'           =>  'pages/pages.php'
     ),
     array(
         'url'               =>  '/groups',
         'title'             =>  'Groups',
-        'content'            =>  'pages/groups.php'
+        'content'           =>  'pages/groups.php'
     )
 );
 
