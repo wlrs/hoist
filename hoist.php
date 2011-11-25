@@ -34,6 +34,12 @@ class hoist{
         }
 
         $page['active'] = false;
+        if(!array_key_exists('title', $page)){
+            $page['title'] = preg_replace("/^\//", '', $page['url']);
+            $page['title'] = preg_replace("/_/", ' ', $page['title']);
+            $page['title'] = preg_replace("/\//", ' &gt; ', $page['title']);
+            $page['title'] = ucwords($page['title']);
+        }
         if(!array_key_exists('headline', $page)) $page['headline'] = $page['title'];
         if(!array_key_exists('override', $page)) $page['override'] = false;
 

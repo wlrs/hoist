@@ -2,27 +2,21 @@
 
 $pages = array(
     array(  
-        'url'               =>  '/',
-        'title'             =>  'Hoist',
-        'content'           =>  'pages/home.php',
-        'groups'            =>  'header_nav',
-        'header_nav_title'  =>  'Overview'
+        'url'       =>  '/',
+        'title'     =>  'Hoist',
+        'content'   =>  'pages/home.php',
+        'groups'    =>  'nav',
+        'nav_title' =>  'Overview'
     ),
     array(
-        'url'               =>  '/examples',
-        'title'             =>  'Examples',
-        'content'           =>  'pages/examples.php',
-        'groups'            =>  'header_nav'
+        'url'       =>  '/guide',
+        'content'   =>  'pages/guide.php',
+        'groups'    =>  'nav'
     ),
     array(
-        'url'               =>  '/pages',
-        'title'             =>  'Pages',
-        'content'           =>  'pages/pages.php'
-    ),
-    array(
-        'url'               =>  '/groups',
-        'title'             =>  'Groups',
-        'content'           =>  'pages/groups.php'
+        'url'       =>  '/get_it',
+        'content'   =>  'pages/get_it.php',
+        'groups'    =>  'nav'
     )
 );
 

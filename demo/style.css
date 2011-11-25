@@ -1,0 +1,242 @@
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/*
+    Margin, padding, and border resets
+    except for form elements
+*/
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/*
+    Consistency fixes
+    adopted from http://necolas.github.com/normalize.css/
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+audio,
+canvas,
+video {
+  display: block;
+}
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  min-height: 100%;
+  font-size: 100%;
+}
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+b, strong {
+  font-weight: bold;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a img, img {
+  -ms-interpolation-mode: bicubic;
+  border: 0;
+}
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: baseline;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="checkbox"], input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+textarea {
+  overflow: auto;
+}
+/*
+    These are easy to forget
+*/
+::selection {
+  background: red;
+  color: white;
+}
+::-moz-selection {
+  background: red;
+  color: white;
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+body {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62);
+}
+/*
+    Style overrides for IE6-8
+    http://jonikorpi.com/leaving-old-IE-behind/
+*/
+body {
+  background-color: #037ee7;
+  color: #fff;
+  font-family: news-gothic-std, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+a, a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+h1 {
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 72px;
+}
+#nav, #nav li {
+  padding: 0;
+  margin: 0;
+}
+#nav li {
+  display: inline;
+  margin-right: 15px;
+}
+#nav li:last-child {
+  margin-right: 0;
+}
+#nav li a {
+  padding-bottom: 4px;
+}
+#nav li.active a {
+  border-bottom: 2px solid #fff;
+}
+#nav li a:hover {
+  border-bottom: 2px solid #fff;
+}
+#header_logo,
+#nav,
+#page_title,
+#content {
+  padding: 0 1.125em;
+  margin: 0 auto;
+  max-width: 34.5em;
+}
+#header_logo {
+  padding-top: 0.5625em;
+  padding-bottom: 0.5625em;
+}
+#nav {
+  padding-bottom: 1.125em;
+}
+#header_logo, #nav {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  font-size: 1.25em;
+}
+pre {
+  padding: 0 3px 2px;
+  font-family: Monaco, Andale Mono, Courier New, monospace;
+  font-size: 0.5625em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+/*
+    Mobile layout 
+    240–479 px
+    Zoomed out below 320 px
+*/
+@media screen and (min-width: 15em) {
+  #header_logo,
+  #nav,
+  #page_title,
+  #content {
+    width: 16.5em;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #masthead h1,
+  #masthead p,
+  #introduction span,
+  #follow span {
+    display: inline;
+  }
+}

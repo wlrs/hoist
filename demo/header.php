@@ -1,37 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title><?=$page['title']?></title>
-    
-    <link href="/bootstrap.1.4.0.min.css" rel="stylesheet">
-    <link href="/prettify.css" rel="stylesheet">
+<!doctype html>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
 
-    <!--
-    <link href="assets/css/docs.css" rel="stylesheet">
-    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-    -->
-  </head>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <body>
+        <title><?=$page['title']?></title>
 
-      <div class="topbar">
-      <div class="topbar-inner">
-        <div class="container">
-          <a class="brand" href="/">Hoist</a>
-          <ul class="nav">
-            <? foreach($hoist->groups['header_nav'] as $link){ ?>
+        <link href="/style.css" rel="stylesheet">
+        <link href="/prettify.css" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+            <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body lang="en">
+
+        <div id="header_logo">
+            <h1><a class="brand" href="/">Hoist</a></h1>
+        </div>
+
+        <ul id="nav">
+            <? foreach($hoist->groups['nav'] as $link){ ?>
                 <li<? if ($link['active']) echo ' class="active"'; ?>><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a></li>    
             <? } ?>
-          </ul>
-        </div>
-      </div>
-    </div>
+        </ul>
 
-    <div class="container" style="margin-top: 60px;">
-
+   
         <? if($page['url'] != '/'){ ?>
-            <div class="inner">
-                <h1><?=$page['title']?></h1>
+            <div id="page_title">
+                <h2><?=$page['title']?></h2>
             </div>
         <? } ?>
+
+        <div id="content">
