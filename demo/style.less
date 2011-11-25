@@ -148,7 +148,7 @@ input, textarea, button, select {
 */
 
 ::selection {
-    background: red;
+    background: #00ff00;
     color: white;
 }
 ::-moz-selection {
@@ -179,11 +179,30 @@ body {
 
 
 body{
-    background-color: #037ee7;
+    /*background-color: rgb(3,124,231); */
+    background-color: rgb(60,164,255);
     color: #fff;
+    /*
     font-family: news-gothic-std, Helvetica, Arial, sans-serif;
+    */
+    font-family:  Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 20px;
+
+    background-image: linear-gradient(bottom, rgb(60,164,255) 0%, rgb(3,124,231) 71%);
+background-image: -o-linear-gradient(bottom, rgb(60,164,255) 0%, rgb(3,124,231) 71%);
+background-image: -moz-linear-gradient(bottom, rgb(60,164,255) 0%, rgb(3,124,231) 71%);
+background-image: -webkit-linear-gradient(bottom, rgb(60,164,255) 0%, rgb(3,124,231) 71%);
+background-image: -ms-linear-gradient(bottom, rgb(60,164,255) 0%, rgb(3,124,231) 71%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(60,164,255)),
+        color-stop(0.71, rgb(3,124,231))
+    );
+    background-repeat: repeat-x;
 }
 
 a, a:visited{
@@ -193,6 +212,7 @@ a, a:visited{
 }
 
 h1{
+    font-family: news-gothic-std, Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 72px;
     line-height: 72px;
@@ -226,7 +246,7 @@ h1{
 }
 
 
-#header_logo, #nav, #page_title, #content {
+#header_logo, #nav, #page_title, #content, #footer {
     padding: 0 18/@em;
     margin: 0 auto;
     max-width: @8cols;
@@ -241,27 +261,35 @@ h1{
     padding-bottom: 18/@em;   
 }
 
-#header_logo, #nav{
+#header_logo, #nav, #footer{
     text-align: center;
 }
 
+#footer{
+    margin-top: 36/@em;
+    padding-bottom: 36/@em;
+    font-size: 12/@em;
+}
 
 p{
     line-height: 23/@em;
     text-align: justify;
-    padding-top: 9/@em;
-    padding-bottom: 3/@em;   
+    padding-top: 12/@em;
+    padding-bottom: 6/@em;
 }
 
-p a, p a:visited{
-    border-bottom: 2px solid #249aff;
+p a, p a:visited,
+#footer a, #footer a:visited{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-p a:hover{
+p a:hover,
+#footer a:hover{
     border-bottom: 2px solid #fff;
 }
 
 h2{
+    font-family: news-gothic-std, Helvetica, Arial, sans-serif;
     text-align: center;
     font-size: 20/@em;
     padding-top: 9/@em;
@@ -271,10 +299,9 @@ pre{
     padding: 5px;
     font-family:Monaco, Andale Mono, Courier New, monospace;
     font-size:9/@em;
-    -webkit-border-radius:3px;
-    -moz-border-radius:3px;
-    border-radius:3px;
-    margin-top: 18/@em;
+
+    margin-top: 24/@em;
+    margin-bottom: 8/@em;
 }
 /*
     Mobile layout 
@@ -284,12 +311,37 @@ pre{
 
 @media screen and (min-width: 15em) {
 
-    #header_logo, #nav, #page_title, #content {
+    #header_logo, #nav, #page_title, #content, #footer {
         width: @4cols;
         max-width: none;
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 18/@em;
+        padding-left: 18/@em;
+    }
+}
+
+
+
+
+
+/*
+    Wide mobile layout 
+    480-767 px
+    Zoomed in above 480 px
+*/
+
+@media screen and (min-width: 30em) {
+
+    #header_logo, #nav, #page_title, #content, #footer {
+        width: @6cols;
+        max-width: none;
+        padding-left: 18/@em;
+        padding-left: 18/@em;
     }
 
-    
+    pre{
+        font-size: 12/@em;
+    }
+
 }
+
+

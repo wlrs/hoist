@@ -30,10 +30,10 @@
         </ul>
 
    
-        
-            <div id="page_title">
-                <h2><?=$page['headline']?></h2>
-            </div>
-        
+    
+        <div id="page_title">
+            <h2><?=$page['headline']?></h2>
+        </div>
+    
 
         <div id="content">

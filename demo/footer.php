@@ -1,4 +1,9 @@
-
+            <div id="footer">
+                
+                Built by <a href="http://joeynelson.com">Joey Nelson</a>.
+                
+            </div>
+    
         </div><? // #content ?>
 
         <script src="/prettify.js"></script>

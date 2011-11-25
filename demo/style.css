@@ -132,7 +132,7 @@ textarea {
     These are easy to forget
 */
 ::selection {
-  background: red;
+  background: #00ff00;
   color: white;
 }
 ::-moz-selection {
@@ -153,17 +153,31 @@ body {
     http://jonikorpi.com/leaving-old-IE-behind/
 */
 body {
-  background-color: #037ee7;
+  /*background-color: rgb(3,124,231); */
+
+  background-color: #3ca4ff;
   color: #fff;
-  font-family: news-gothic-std, Helvetica, Arial, sans-serif;
+  /*
+    font-family: news-gothic-std, Helvetica, Arial, sans-serif;
+    */
+
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 20px;
+  background-image: linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
+  background-image: -o-linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
+  background-image: -moz-linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
+  background-image: -webkit-linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
+  background-image: -ms-linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3ca4ff), color-stop(0.71, #037ce7));
+  background-repeat: repeat-x;
 }
 a, a:visited {
   color: #fff;
   text-decoration: none;
 }
 h1 {
+  font-family: news-gothic-std, Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 72px;
   line-height: 72px;
@@ -192,7 +206,8 @@ h1 {
 #header_logo,
 #nav,
 #page_title,
-#content {
+#content,
+#footer {
   padding: 0 1.125em;
   margin: 0 auto;
   max-width: 34.5em;
@@ -204,22 +219,31 @@ h1 {
 #nav {
   padding-bottom: 1.125em;
 }
-#header_logo, #nav {
+#header_logo, #nav, #footer {
   text-align: center;
+}
+#footer {
+  margin-top: 2.25em;
+  padding-bottom: 2.25em;
+  font-size: 0.75em;
 }
 p {
   line-height: 1.4375em;
   text-align: justify;
-  padding-top: 0.5625em;
-  padding-bottom: 0.1875em;
+  padding-top: 0.75em;
+  padding-bottom: 0.375em;
 }
-p a, p a:visited {
-  border-bottom: 2px solid #249aff;
+p a,
+p a:visited,
+#footer a,
+#footer a:visited {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
-p a:hover {
+p a:hover, #footer a:hover {
   border-bottom: 2px solid #fff;
 }
 h2 {
+  font-family: news-gothic-std, Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 1.25em;
   padding-top: 0.5625em;
@@ -228,10 +252,8 @@ pre {
   padding: 5px;
   font-family: Monaco, Andale Mono, Courier New, monospace;
   font-size: 0.5625em;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin-top: 1.125em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 /*
     Mobile layout 
@@ -242,10 +264,31 @@ pre {
   #header_logo,
   #nav,
   #page_title,
-  #content {
+  #content,
+  #footer {
     width: 16.5em;
     max-width: none;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1.125em;
+    padding-left: 1.125em;
+  }
+}
+/*
+    Wide mobile layout 
+    480-767 px
+    Zoomed in above 480 px
+*/
+@media screen and (min-width: 30em) {
+  #header_logo,
+  #nav,
+  #page_title,
+  #content,
+  #footer {
+    width: 25.5em;
+    max-width: none;
+    padding-left: 1.125em;
+    padding-left: 1.125em;
+  }
+  pre {
+    font-size: 0.75em;
   }
 }

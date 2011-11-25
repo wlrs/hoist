@@ -11,7 +11,6 @@ class hoist{
 
     function __construct($raw_pages = array()){
         $this->active_url = $this->strip_trailing_slash($_SERVER['REQUEST_URI']);
-
         foreach($raw_pages as $page){
             $this->process_page($page);            
         }
@@ -29,8 +28,7 @@ class hoist{
         if(!file_exists($page['content'])){
             echo "I can't find the content file for this page:";
             $this->d($page);
-            echo "If it helps, I'm trying to find it from here: " . $_SERVER['DOCUMENT_ROOT'];
-            die();
+            die("If it helps, I'm trying to find it from here: " . $_SERVER['DOCUMENT_ROOT']);
         }
 
         $page['active'] = false;
@@ -83,8 +81,7 @@ class hoist{
             header('HTTP/1.0 404 Not Found');
             die('error: no page to display');
         }
-
-        $hoist = $this;
+        $hoist = $this; //more convenient to use $hoist in the templates
         if(!$page['override']) require $this->header;
         require $page['content'];
         if(!$page['override']) require $this->footer;
@@ -97,8 +94,6 @@ class hoist{
     }
 
     function d($o){
-        echo "<pre>";
-        print_r($o);
-        echo "</pre><br />";
+        echo '<pre>' . print_r($o, true) . '</pre><br />';
     }
 }
