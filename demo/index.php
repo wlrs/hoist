@@ -6,7 +6,8 @@ $pages = array(
         'title'     =>  'Hoist',
         'content'   =>  'pages/home.php',
         'groups'    =>  'nav',
-        'nav_title' =>  'Overview'
+        'nav_title' =>  'Overview',
+        'headline'  =>  'Build simple websites fast.'
     ),
     array(
         'url'       =>  '/guide',

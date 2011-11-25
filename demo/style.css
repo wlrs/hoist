@@ -180,6 +180,7 @@ h1 {
   margin-right: 0;
 }
 #nav li a {
+  text-decoration: none;
   padding-bottom: 4px;
 }
 #nav li.active a {
@@ -206,17 +207,31 @@ h1 {
 #header_logo, #nav {
   text-align: center;
 }
+p {
+  line-height: 1.4375em;
+  text-align: justify;
+  padding-top: 0.5625em;
+  padding-bottom: 0.1875em;
+}
+p a, p a:visited {
+  border-bottom: 2px solid #249aff;
+}
+p a:hover {
+  border-bottom: 2px solid #fff;
+}
 h2 {
   text-align: center;
   font-size: 1.25em;
+  padding-top: 0.5625em;
 }
 pre {
-  padding: 0 3px 2px;
+  padding: 5px;
   font-family: Monaco, Andale Mono, Courier New, monospace;
   font-size: 0.5625em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  margin-top: 1.125em;
 }
 /*
     Mobile layout 
@@ -232,11 +247,5 @@ pre {
     max-width: none;
     padding-left: 0;
     padding-right: 0;
-  }
-  #masthead h1,
-  #masthead p,
-  #introduction span,
-  #follow span {
-    display: inline;
   }
 }

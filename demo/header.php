@@ -30,10 +30,10 @@
         </ul>
 
    
-        <? if($page['url'] != '/'){ ?>
+        
             <div id="page_title">
-                <h2><?=$page['title']?></h2>
+                <h2><?=$page['headline']?></h2>
             </div>
-        <? } ?>
+        
 
         <div id="content">

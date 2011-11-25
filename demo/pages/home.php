@@ -1,6 +1,11 @@
-<h2>Build simple websites fast.</h2>
 
-<p>Hoist is a lightweight system that makes building small websites with PHP ridiculously simple. How simple? Look at the code that powers this site:</p>
+
+<p>
+    Hoist is a lightweight system for building small websites with PHP. It makes your job ridiculously easy.
+</p>
+<p>
+    How easy? <a href="https://github.com/wlrs/hoist/tree/master/demo">Look at the code that powers this site</a>:
+</p>
 
 <pre class="prettyprint">
 <? 
@@ -9,3 +14,11 @@
     echo htmlentities($code);
 ?>
 </pre>
+
+<p>
+    <a href="https://github.com/wlrs/hoist">Get the code on Github</a> and <a href="/guide">consult the guide</a>. You can have a site running with Hoist in minutes.
+</p>
+
+<p>
+    Hoist is 
+</p>

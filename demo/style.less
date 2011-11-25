@@ -213,6 +213,7 @@ h1{
 }
 
 #nav li a{
+    text-decoration: none;
     padding-bottom: 4px;
 }
 
@@ -245,13 +246,35 @@ h1{
 }
 
 
+p{
+    line-height: 23/@em;
+    text-align: justify;
+    padding-top: 9/@em;
+    padding-bottom: 3/@em;   
+}
+
+p a, p a:visited{
+    border-bottom: 2px solid #249aff;
+}
+
+p a:hover{
+    border-bottom: 2px solid #fff;
+}
+
 h2{
     text-align: center;
     font-size: 20/@em;
+    padding-top: 9/@em;
 }
 
 pre{
-padding:0 3px 2px;font-family:Monaco, Andale Mono, Courier New, monospace;font-size:9/@em;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;
+    padding: 5px;
+    font-family:Monaco, Andale Mono, Courier New, monospace;
+    font-size:9/@em;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    margin-top: 18/@em;
 }
 /*
     Mobile layout 
@@ -268,12 +291,5 @@ padding:0 3px 2px;font-family:Monaco, Andale Mono, Courier New, monospace;font-s
         padding-right: 0;
     }
 
-    #masthead h1, #masthead p, #introduction span, #follow span {
-        display: inline;
-    }
-
-    .col3, .col4, .col21, .col22 {
-        
-    }
-
+    
 }
