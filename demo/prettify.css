@@ -7,7 +7,10 @@
 .typ, .atn, .dec, .var { color: #CB4B16; }
 .pln { color: #feffc8; }
 .prettyprint {
+  /*
   background-color: #0071d2;
+  */
+  background-color: #34373f;
   padding: 12px;
   /*border: 1px solid rgba(0,0,0,.2);
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);

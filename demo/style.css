@@ -156,7 +156,7 @@ body {
   /*background-color: rgb(3,124,231); */
 
   background-color: #333;
-  color: #fff;
+  color: #f3f3f1;
   /*
     font-family: news-gothic-std, Helvetica, Arial, sans-serif;
     */
@@ -228,7 +228,7 @@ p {
 }
 #content ul {
   list-style-position: inside;
-  margin: 0 2.25em;
+  margin: 0.75em 2.25em 0;
 }
 #content ul li {
   line-height: 1.4375em;
