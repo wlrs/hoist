@@ -1,10 +1,9 @@
-
-
 <p>
     Hoist is a lightweight system that makes it ridiculously easy to build small websites with PHP.
 </p>
+
 <p>
-    How easy? <a href="https://github.com/wlrs/hoist/tree/master/demo">Look at the actual code that powers this site</a>:
+    How easy? <a href="https://github.com/wlrs/hoist/blob/master/demo/index.php">Look at the actual code that powers this site</a>:
 </p>
 
 <pre class="prettyprint">

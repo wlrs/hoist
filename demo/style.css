@@ -132,11 +132,11 @@ textarea {
     These are easy to forget
 */
 ::selection {
-  background: #00ff00;
+  background: #004178;
   color: white;
 }
 ::-moz-selection {
-  background: red;
+  background: #004178;
   color: white;
 }
 img::selection {
@@ -155,7 +155,7 @@ body {
 body {
   /*background-color: rgb(3,124,231); */
 
-  background-color: #3ca4ff;
+  background-color: #333;
   color: #fff;
   /*
     font-family: news-gothic-std, Helvetica, Arial, sans-serif;
@@ -164,13 +164,6 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 20px;
-  background-image: linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
-  background-image: -o-linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
-  background-image: -moz-linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
-  background-image: -webkit-linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
-  background-image: -ms-linear-gradient(bottom, #3ca4ff 0%, #037ce7 71%);
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3ca4ff), color-stop(0.71, #037ce7));
-  background-repeat: repeat-x;
 }
 a, a:visited {
   color: #fff;
@@ -233,6 +226,13 @@ p {
   padding-top: 0.75em;
   padding-bottom: 0.375em;
 }
+#content ul {
+  list-style-position: inside;
+  margin: 0 2.25em;
+}
+#content ul li {
+  line-height: 1.4375em;
+}
 p a,
 p a:visited,
 #footer a,
@@ -247,6 +247,11 @@ h2 {
   text-align: center;
   font-size: 1.25em;
   padding-top: 0.5625em;
+}
+h3 {
+  font-family: news-gothic-std, Helvetica, Arial, sans-serif;
+  color: #3ca6ff;
+  margin-top: 0.75em;
 }
 pre {
   padding: 5px;
