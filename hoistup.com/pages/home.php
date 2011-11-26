@@ -5,7 +5,7 @@
 </p>
 
 <p>
-    How easy? <a href="https://github.com/wlrs/hoist/blob/master/demo/index.php">Look at the actual code that powers this site</a>:
+    How easy? <a href="https://github.com/wlrs/hoist/blob/master/hoistup.com/index.php">Look at the actual code that powers this site</a>:
 </p>
 
 <pre class="prettyprint">

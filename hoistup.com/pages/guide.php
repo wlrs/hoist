@@ -33,7 +33,7 @@ $hoist->display();
 </pre>
 
 <p>
-    Examples from this site: <a href="https://github.com/wlrs/hoist/blob/master/demo/header.php">header.php</a>, <a href="https://github.com/wlrs/hoist/blob/master/demo/footer.php">footer.php</a>
+    Examples from this site: <a href="https://github.com/wlrs/hoist/blob/master/hoistup.com/header.php">header.php</a>, <a href="https://github.com/wlrs/hoist/blob/master/hoistup.com/footer.php">footer.php</a>
 </p>
 
 
@@ -44,7 +44,7 @@ $hoist->display();
 </p>
 
 <p>
-    Example from this site: <a href="https://github.com/wlrs/hoist/blob/master/demo/pages/home.php">home.php</a>
+    Example from this site: <a href="https://github.com/wlrs/hoist/blob/master/hoistup.com/pages/home.php">home.php</a>
 </p>
 
 
