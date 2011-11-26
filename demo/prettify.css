@@ -2,9 +2,9 @@
 .lit { color: #5fdfff; }
 .pun, .opn, .clo { color: #999; }
 .fun { color: #dc322f; }
-.str, .atv { color: #3CA6FF; }
-.kwd, .tag { color: #5fdfff; }
-.typ, .atn, .dec, .var { color: #CB4B16; }
+.str, .atv { color: #4fd230; }
+.kwd, .tag { color: #57b2ff; }
+.typ, .atn, .dec, .var { color: #f9f464; }
 .pln { color: #f8f9d7; }
 .prettyprint {
   /*

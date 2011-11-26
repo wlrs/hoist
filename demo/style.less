@@ -246,7 +246,8 @@ h1{
 }
 
 #nav li a:hover{
-    border-bottom: 2px solid #f3f3f1;
+    color: #33a0fc;
+    border-bottom: 2px solid #33a0fc;
 }
 
 
@@ -297,7 +298,8 @@ p a, p a:visited,
 
 p a:hover,
 #footer a:hover{
-    border-bottom: 2px solid #fff;
+    color: #33a0fc;
+    border-bottom: 2px solid #33a0fc;
 }
 
 h2{
@@ -324,10 +326,26 @@ h2.home{
 h3{
     font-family: omnes-pro, Helvetica, Arial, sans-serif;
     font-weight: 400;
-    font-size: 24/@em;
+    font-size: 28/@em;
     color: #33a0fc;
     margin-top: 12/@em;
 }
+
+h4{
+    background-color: #2a2a2a;
+    font-size:16/@em;
+    padding: 5px;
+    font-family:Monaco, Andale Mono, Courier New, monospace;
+    font-weight: normal;
+    color: #4fd230;
+    margin-top: 16/@em;
+    width: auto;
+
+    .required_field{
+        color: #444 !important;
+    }
+}
+
 
 pre{
     padding: 5px;
@@ -337,6 +355,14 @@ pre{
     margin-top: 24/@em;
     margin-bottom: 8/@em;
 }
+
+.code{
+    font-family:Monaco, Andale Mono, Courier New, monospace;
+    font-size:15/@em;
+    background-color: #2a2a2a;
+    padding: 0 5px;
+}
+
 /*
     Mobile layout 
     240–479 px
@@ -437,3 +463,7 @@ pre{
 }
 
 
+.wf-loading #header,
+.wf-loading h2, .wf-loading h3{
+    visibility: none;
+} 

@@ -11,8 +11,6 @@
     </ul>
 
 
-
-
 <h3>Header and footer</h3>
 
 <p>
@@ -20,7 +18,7 @@
 </p>
 
 <p>
-    You can use the $page array to get the title and other information about the current page, and the $hoist object to get other info about your site.
+    You can use the <span class="code">$page</span> array to get the title and other information about the current page, and the <span class="code">$hoist</span> object to get other info about your site.
 </p>
 
 <p>
@@ -42,7 +40,7 @@ $hoist->display();
 <h3>Content pages</h3>
 
 <p>
-    Each page should have a corresponding PHP or HTML file that contains (or generates) your content. You can use the $page and $hoist objects here too.
+    Each page should have a corresponding PHP or HTML file that contains (or generates) your content. You can use <span class="code">$page</span> and <span class="code">$hoist</span> here too.
 </p>
 
 <p>
@@ -71,13 +69,13 @@ $hoist->display();
     Let's look at the fields that make up each page array.
 </p>
 
-<h4>'url' <span class="required_field">required</span></h4>
+<h4>'url' <span class="required_field">(required)</span></h4>
 
 <p>
-    The url where this page will live. This should include everything after 'http://mysite.com', so your home page should be '/'.
+    The URL where this page will live. This should include everything after 'http://mysite.com', so your home page should be <span class="code">'/'</span>.
 </p>
 
-<h4>'content' <span class="required_field">required</span></h4>
+<h4>'content' <span class="required_field">(required)</span></h4>
 
 <p>
     The PHP or HTML content file for this page. Path is relative to your index.php.
@@ -87,14 +85,14 @@ $hoist->display();
 <h4>'title'</h4>
 
 <p>
-    The title of this page, generally used in the header's &lt;title&gt; tag. If this doesn't exist Hoist will generate a title based on the url.
+    The title of this page, generally used in the header's <span class="code">&lt;title&gt;</span> tag. If this doesn't exist Hoist will generate a title based on the <span class="code">'url'</span> field.
 </p>
 
 
 <h4>'headline'</h4>
 
 <p>
-    Another title for this page. This is generally used as an &lt;h2&gt; tag in the header. If this doesn't exist Hoist will use the 'title' field.
+    Another title for this page. This is generally used as an <span class="code">&lt;h2&gt;</span> tag in the header. If this doesn't exist Hoist will use the <span class="code">'title'</span> field.
 </p>
 
 
@@ -105,7 +103,7 @@ $hoist->display();
 </p>
 
 <p>
-    For instance, on this site the three main pages belong to the 'nav' group. This pages are stored in the $hoist object in an array at $hoist->groups['nav'].The header contains this code which generates the main header navigation:
+    For instance, on this site the three main pages belong to the <span class="code">'nav'</span> group. This pages are stored in the <span class="code">$hoist</span> object in an array at <span class="code">$hoist->groups['nav']</span>. The header contains this code which generates the main header navigation:
 </p>
 
 <pre class="prettyprint">
