@@ -235,8 +235,17 @@ h1 {
 }
 #footer {
   margin-top: 6.75em;
-  padding-bottom: 2.25em;
+  padding-bottom: 0.75em;
   font-size: 0.875em;
+  line-height: 1.625em;
+}
+#footer a, #footer a:visited {
+  color: #33a0fc;
+  border: none !important;
+}
+#footer a:hover {
+  color: #33a0fc;
+  border-bottom: 2px solid #33a0fc !important;
 }
 p {
   line-height: 1.6875em;

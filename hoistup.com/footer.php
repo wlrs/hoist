@@ -1,6 +1,7 @@
             <div id="footer">
                 
-                Released into the cruel world by <a href="http://joeynelson.com">Joey Nelson</a>.
+                Released into this cruel world by <a href="http://joeynelson.com">Joey Nelson</a><br />
+                <a href="http://twitter.com/joeynelson">@joeynelson</a> &nbsp; <a href="mailto:joey@wlrs.net">joey@wlrs.net</a>
                 
             </div>
     
@@ -8,7 +9,6 @@
 
         <script src="/prettify.js"></script>
         <script>prettyPrint();</script>
-
 
         <? if($_SERVER['SERVER_NAME'] == 'hoistup.com'){ ?>
             <script type="text/javascript" src="http://use.typekit.com/qvc8urq.js"></script>
