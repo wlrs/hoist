@@ -1,4 +1,4 @@
-<h2><?=$page['headline']?></h2>
+<h2 class='home'><?=$page['headline']?></h2>
 
 <p>
     Hoist is a lightweight system that makes it ridiculously easy to build small websites with PHP.

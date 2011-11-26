@@ -25,7 +25,7 @@
 
         <ul id="nav">
             <? foreach($hoist->groups['nav'] as $link){ ?>
-                <li<? if ($link['active']) echo ' class="active"'; ?>><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a></li>    
+                <li<? if ($link['active']) echo ' class="active"'; ?>><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a></li>
             <? } ?>
         </ul>
 
