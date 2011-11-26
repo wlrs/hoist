@@ -138,7 +138,7 @@ $hoist->display();
 </pre>
 
 <p>
-    In order for your index.php to receive requests for all the fancy URLs you're setting up, we need your web server to route requests for missing files to it. Here's an Apache .htaccess file that should get the job done:
+    In order for your index.php to receive requests for all the fancy URLs you're setting up, we need your web server to route requests for missing files to it. Here's an Apache .htaccess file that gets the job done:
 </p>
 
 <pre class="prettyprint">

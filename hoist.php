@@ -1,4 +1,4 @@
-<?
+<?php
 
 class hoist{
     public $active_url = false;
@@ -12,12 +12,12 @@ class hoist{
     function __construct($raw_pages = array()){
         $this->active_url = $this->strip_trailing_slash($_SERVER['REQUEST_URI']);
         foreach($raw_pages as $page){
-            $this->process_page($page);            
+            $this->process_page($page);
         }
     }
 
     function process_page($page = array()){
-        foreach($required_fields as $field){
+        foreach($this->required_fields as $field){
             if(!array_key_exists($field, $page)){
                 echo "No $field for this page:";
                 $this->d($page);
@@ -31,16 +31,16 @@ class hoist{
             die("If it helps, I'm trying to find it from here: " . $_SERVER['DOCUMENT_ROOT']);
         }
 
-        $page['active'] = false;
-        if(!array_key_exists('title', $page)){
-            $page['title'] = preg_replace("/^\//", '', $page['url']);
-            $page['title'] = preg_replace("/_/", ' ', $page['title']);
-            $page['title'] = preg_replace("/\//", ' &gt; ', $page['title']);
-            $page['title'] = ucwords($page['title']);
+        if(!array_key_exists('title', $page)){ //create a title based on the url
+            $title = preg_replace("/^\//", '', $page['url']);
+            $title = preg_replace("/_/", ' ', $title);
+            $title = preg_replace("/\//", ' &gt; ', $title);
+            $page['title'] = ucwords($title);
         }
         if(!array_key_exists('headline', $page)) $page['headline'] = $page['title'];
         if(!array_key_exists('override', $page)) $page['override'] = false;
 
+        $page['active'] = false;
         $page['url'] = $this->strip_trailing_slash($page['url']);
         if($page['url'] == $this->active_url && !$this->active_page){
             $this->active_page = $page;
@@ -65,7 +65,7 @@ class hoist{
         if(array_key_exists('groups', $page)) $groups = $page['groups'];
         if(is_string($groups) && strlen($groups)) $groups = array($groups);
 
-        //add this page to any types that is has a title for
+        //add this page to any groups that it has a title for
         foreach($page as $key=>$value){
             if(preg_match("/^(.+)_title$/", $key, $matches)){
                 $groups[] = $matches[1];
@@ -97,3 +97,4 @@ class hoist{
         echo '<pre>' . print_r($o, true) . '</pre><br />';
     }
 }
+?>
