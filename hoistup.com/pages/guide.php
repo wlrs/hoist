@@ -58,7 +58,7 @@ $hoist->display();
 <?
     $code = file_get_contents('index.php');
     if(preg_match("/pages =([^;]+)/m", $code, $matches)){
-        echo "\$pages = ";
+        echo '$pages =';
         echo htmlentities($matches[1]);
         echo ";";
     }
