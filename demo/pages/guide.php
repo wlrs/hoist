@@ -1,13 +1,15 @@
 <p>
-    Hoist is just a simple PHP class that automates the most tedious parts of putting together a simple site. A site built with Hoist is made up of these elements:
-        <ul>
-            <li>A header and footer template</li>
-            <li>A PHP or HTML file for each page</li>
-            <li>An array of arrays describing each page</li>
-            <li>An index.php script that receives requests</li>
-
-        </ul>
+    Hoist is just a simple PHP class that automates the most tedious parts of putting together a site. A site built with Hoist is made up of these elements:
 </p>
+
+    <ul>
+        <li>A header and footer template</li>
+        <li>A PHP or HTML file for each page</li>
+        <li>An array of arrays describing each page</li>
+        <li>An index.php script that receives requests</li>
+
+    </ul>
+
 
 
 

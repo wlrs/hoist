@@ -19,16 +19,17 @@
 
     <body lang="en">
 
-        <div id="header_logo">
-            <h1><a class="brand" href="/">Hoist</a></h1>
+        <div id="header">
+            <div id="logo">
+                <h1><a class="brand" href="/">Hoist</a></h1>
+            </div>
+
+            <ul id="nav">
+                <? foreach($hoist->groups['nav'] as $link){ ?>
+                    <li<? if ($link['active']) echo ' class="active"'; ?>><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a></li>
+                <? } ?>
+            </ul>
         </div>
-
-        <ul id="nav">
-            <? foreach($hoist->groups['nav'] as $link){ ?>
-                <li<? if ($link['active']) echo ' class="active"'; ?>><a href="<?= $link['url'] ?>"><?= $link['title'] ?></a></li>
-            <? } ?>
-        </ul>
-
    
     <? /*
         <div id="page_title">

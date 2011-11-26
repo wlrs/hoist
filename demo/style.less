@@ -148,11 +148,11 @@ input, textarea, button, select {
 */
 
 ::selection {
-    background: #004178;
+    background: #33a0fc;
     color: white;
 }
 ::-moz-selection {
-    background: #004178;
+    background: #33a0fc;
     color: white;
 }
 
@@ -164,7 +164,7 @@ img::-moz-selection {
 }
 
 body {
-    -webkit-tap-highlight-color: rgba(255,0,0, 0.62);
+    -webkit-tap-highlight-color: #33a0fc;
 }
 
 
@@ -185,29 +185,46 @@ body{
     /*
     font-family: news-gothic-std, Helvetica, Arial, sans-serif;
     */
+    
     font-family:  Helvetica, Arial, sans-serif;
+    
+
+    /*
+            font-family: omnes-pro, Helvetica, Arial, sans-serif;
+    */
     font-weight: 400;
     font-size: 16px;
 
 }
 
 a, a:visited{
-    color: #fff;
+    color: #f3f3f1;
     text-decoration: none;
 
 }
 
 h1{
+    font-family: omnes-pro, Helvetica, Arial, sans-serif;
+
+    /*
     font-family: news-gothic-std, Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    */
+    font-weight: 300;
     font-size: 72px;
     line-height: 72px;
     margin-top: 3/@em;
     margin-bottom: 1/@em;
+/*
+    text-shadow: 0 1px 0 #aaa,
+               0 2px 1px #777,
+               0 5px 5px rgba(0,0,0,.15);
+*/
 }
 
 
 #nav, #nav li{
+     font-family: omnes-pro, Helvetica, Arial, sans-serif;
+     font-size: 20px;
     padding: 0;
     margin: 0;
 }
@@ -225,15 +242,15 @@ h1{
 }
 
 #nav li.active a{
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #f3f3f1;
 }
 
 #nav li a:hover{
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #f3f3f1;
 }
 
 
-#header_logo, #nav, #page_title, #content, #footer {
+#header, #page_title, #content, #footer {
     padding: 0 18/@em;
     margin: 0 auto;
     max-width: @8cols;
@@ -248,7 +265,7 @@ h1{
     padding-bottom: 18/@em;   
 }
 
-#header_logo, #nav, #footer{
+#logo, #nav, #footer{
     text-align: center;
 }
 
@@ -267,7 +284,7 @@ p{
 
 #content ul{
     list-style-position:inside;
-    margin: 12/@em 36/@em 0;
+    margin: 12/@em 20/@em 0;
 }
 #content ul li{
     line-height: 27/@em;
@@ -284,10 +301,19 @@ p a:hover,
 }
 
 h2{
+        font-family: omnes-pro, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+/*
     font-family: news-gothic-std, Helvetica, Arial, sans-serif;
+    */
     text-align: center;
     font-size: 20/@em;
     padding-top: 9/@em;
+/*
+        text-shadow: 0 1px 0 #999,
+               0 1px 1px #555,
+               0 5px 5px rgba(0,0,0,.15);
+               */
 }
 
 h2.home{
@@ -296,8 +322,10 @@ h2.home{
 }
 
 h3{
-    font-family: news-gothic-std, Helvetica, Arial, sans-serif;
-    color: #3ca6ff;
+    font-family: omnes-pro, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 24/@em;
+    color: #33a0fc;
     margin-top: 12/@em;
 }
 
@@ -317,7 +345,7 @@ pre{
 
 @media screen and (min-width: 15em) {
 
-    #header_logo, #nav, #page_title, #content, #footer {
+    #header, #page_title, #content, #footer {
         width: @4cols;
         max-width: none;
         padding-left: 6/@em;
@@ -337,7 +365,7 @@ pre{
 
 @media screen and (min-width: 30em) {
 
-    #header_logo, #nav, #page_title, #content, #footer {
+    #header, #page_title, #content, #footer {
         width: @6cols;
         max-width: none;
         padding-left: 9/@em;
@@ -346,6 +374,64 @@ pre{
 
     pre{
         font-size: 12/@em;
+    }
+
+    #content ul{
+        margin: 12/@em 36/@em 0;
+    }
+
+    h2.home{
+        font-size: 32/@em;
+        padding-top: 20/@em;   
+        padding-bottom: 18/@em;
+    }
+
+}
+
+
+
+/*
+    Tablet layout 
+    600-911 px
+    Zoomed in above 600 px
+*/
+
+@media screen and (min-width: 37.5em) {
+
+    #header, #page_title, #content, #footer {
+        width: @8cols;
+        max-width: none;
+        padding-left: 9/@em;
+        padding-right: 9/@em;
+    }
+
+    pre{
+        font-size: 14/@em;
+    }
+
+
+    #logo{
+        float: left;
+    }
+
+    #nav{
+        padding-top: 37/@em;
+        float: right;
+    }
+
+    #content{
+        clear: both;
+    }
+
+    h2.home{
+        font-size: 42/@em;
+        padding-top: 20/@em;   
+        padding-bottom: 18/@em;
+    }
+
+
+    #content ul{
+        margin: 12/@em 42/@em 0;
     }
 
 }

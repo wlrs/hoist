@@ -132,11 +132,11 @@ textarea {
     These are easy to forget
 */
 ::selection {
-  background: #004178;
+  background: #33a0fc;
   color: white;
 }
 ::-moz-selection {
-  background: #004178;
+  background: #33a0fc;
   color: white;
 }
 img::selection {
@@ -146,7 +146,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62);
+  -webkit-tap-highlight-color: #33a0fc;
 }
 /*
     Style overrides for IE6-8
@@ -162,22 +162,38 @@ body {
     */
 
   font-family: Helvetica, Arial, sans-serif;
+  /*
+            font-family: omnes-pro, Helvetica, Arial, sans-serif;
+    */
+
   font-weight: 400;
   font-size: 16px;
 }
 a, a:visited {
-  color: #fff;
+  color: #f3f3f1;
   text-decoration: none;
 }
 h1 {
-  font-family: news-gothic-std, Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: omnes-pro, Helvetica, Arial, sans-serif;
+  /*
+    font-family: news-gothic-std, Helvetica, Arial, sans-serif;
+    */
+
+  font-weight: 300;
   font-size: 72px;
   line-height: 72px;
   margin-top: 0.1875em;
   margin-bottom: 0.0625em;
+  /*
+    text-shadow: 0 1px 0 #aaa,
+               0 2px 1px #777,
+               0 5px 5px rgba(0,0,0,.15);
+*/
+
 }
 #nav, #nav li {
+  font-family: omnes-pro, Helvetica, Arial, sans-serif;
+  font-size: 20px;
   padding: 0;
   margin: 0;
 }
@@ -193,13 +209,12 @@ h1 {
   padding-bottom: 4px;
 }
 #nav li.active a {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #f3f3f1;
 }
 #nav li a:hover {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #f3f3f1;
 }
-#header_logo,
-#nav,
+#header,
 #page_title,
 #content,
 #footer {
@@ -214,7 +229,7 @@ h1 {
 #nav {
   padding-bottom: 1.125em;
 }
-#header_logo, #nav, #footer {
+#logo, #nav, #footer {
   text-align: center;
 }
 #footer {
@@ -230,7 +245,7 @@ p {
 }
 #content ul {
   list-style-position: inside;
-  margin: 0.75em 2.25em 0;
+  margin: 0.75em 1.25em 0;
 }
 #content ul li {
   line-height: 1.6875em;
@@ -245,18 +260,31 @@ p a:hover, #footer a:hover {
   border-bottom: 2px solid #fff;
 }
 h2 {
-  font-family: news-gothic-std, Helvetica, Arial, sans-serif;
+  font-family: omnes-pro, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  /*
+    font-family: news-gothic-std, Helvetica, Arial, sans-serif;
+    */
+
   text-align: center;
   font-size: 1.25em;
   padding-top: 0.5625em;
+  /*
+        text-shadow: 0 1px 0 #999,
+               0 1px 1px #555,
+               0 5px 5px rgba(0,0,0,.15);
+               */
+
 }
 h2.home {
   padding-top: 1.5em;
   padding-bottom: 1.125em;
 }
 h3 {
-  font-family: news-gothic-std, Helvetica, Arial, sans-serif;
-  color: #3ca6ff;
+  font-family: omnes-pro, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: #33a0fc;
   margin-top: 0.75em;
 }
 pre {
@@ -272,8 +300,7 @@ pre {
     Zoomed out below 320 px
 */
 @media screen and (min-width: 15em) {
-  #header_logo,
-  #nav,
+  #header,
   #page_title,
   #content,
   #footer {
@@ -289,8 +316,7 @@ pre {
     Zoomed in above 480 px
 */
 @media screen and (min-width: 30em) {
-  #header_logo,
-  #nav,
+  #header,
   #page_title,
   #content,
   #footer {
@@ -301,5 +327,50 @@ pre {
   }
   pre {
     font-size: 0.75em;
+  }
+  #content ul {
+    margin: 0.75em 2.25em 0;
+  }
+  h2.home {
+    font-size: 2em;
+    padding-top: 1.25em;
+    padding-bottom: 1.125em;
+  }
+}
+/*
+    Tablet layout 
+    600-911 px
+    Zoomed in above 600 px
+*/
+@media screen and (min-width: 37.5em) {
+  #header,
+  #page_title,
+  #content,
+  #footer {
+    width: 34.5em;
+    max-width: none;
+    padding-left: 0.5625em;
+    padding-right: 0.5625em;
+  }
+  pre {
+    font-size: 0.875em;
+  }
+  #logo {
+    float: left;
+  }
+  #nav {
+    padding-top: 2.3125em;
+    float: right;
+  }
+  #content {
+    clear: both;
+  }
+  h2.home {
+    font-size: 2.625em;
+    padding-top: 1.25em;
+    padding-bottom: 1.125em;
+  }
+  #content ul {
+    margin: 0.75em 2.625em 0;
   }
 }

@@ -17,7 +17,7 @@
 </pre>
 
 <p>
-    Hoist minimizes the pain of setting up templates and nice URLs and allows you to worry about the important stuff like content and layout.
+    Hoist minimizes the pain of setting up templates and nice URLs and lets you worry about the important stuff like content and layout.
 </p>
 
 <p>
