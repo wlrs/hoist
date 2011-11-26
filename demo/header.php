@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <title><?=$page['title']?></title>
+        <title><?=$page['title']?><? if($page['url'] != '/') echo " | Hoist" ?></title>
 
         <link href="/style.css" rel="stylesheet">
         <link href="/prettify.css" rel="stylesheet">

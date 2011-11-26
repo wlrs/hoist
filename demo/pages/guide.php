@@ -115,7 +115,7 @@ $hoist->display();
 </pre>
 
 <p>
-    Each page can also have a title for each specific group. To set the page's title for the 'nav' group, just use the field 'nav_title'. This will be used as the 'title' field for the page stored in $hoist->groups['nav'].
+    Each page can also have a title for each specific group. To set the page's title for the <span class="code">'nav'</span> group, just use the field <span class="code">'nav_title'</span>. This will be used as the <span class="code">'title'</span> field for the page stored in <span class="code">$hoist->groups['nav']</span>.
 </p>
 
 
@@ -156,4 +156,4 @@ $hoist->display();
 if (!-e $request_filename) {
     rewrite . /index.php last;
 }
-</pre>              
+</pre>
