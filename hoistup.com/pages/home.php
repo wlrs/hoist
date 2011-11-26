@@ -1,11 +1,7 @@
 <h2 class='home'><?=$page['headline']?></h2>
 
 <p>
-    Hoist is a lightweight system that makes it ridiculously easy to build small websites with PHP.
-</p>
-
-<p>
-    How easy? <a href="https://github.com/wlrs/hoist/blob/master/hoistup.com/index.php">Look at the actual code that powers this site</a>:
+    Hoist is a tiny PHP class that makes it ridiculously easy to build small websites. How easy? <a href="https://github.com/wlrs/hoist/blob/master/hoistup.com/index.php">Look at the code that powers this site</a>:
 </p>
 
 <pre class="prettyprint">
