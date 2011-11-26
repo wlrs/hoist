@@ -406,3 +406,57 @@ pre {
     margin: 0.75em 2.625em 0;
   }
 }
+.com {
+  color: #feffc8;
+}
+.lit {
+  color: #5fdfff;
+}
+.pun, .opn, .clo {
+  color: #999;
+}
+.fun {
+  color: #dc322f;
+}
+.str, .atv {
+  color: #4fd230;
+}
+.kwd, .tag {
+  color: #57b2ff;
+}
+.typ,
+.atn,
+.dec,
+.var {
+  color: #f9f464;
+}
+.pln {
+  color: #f8f9d7;
+}
+.prettyprint {
+  /*
+  background-color: #0071d2;
+  */
+
+  background-color: #222222;
+  padding: 12px;
+  /*border: 1px solid rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+          box-shadow: 0 1px 2px rgba(0,0,0,.1); */
+
+}
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin: 0 0 0 40px;
+}
+/* IE indents via margin-left */
+ol.linenums li {
+  padding: 0 5px;
+  color: rgba(0, 0, 0, 0.15);
+  line-height: 20px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+/* Alternate shading for lines */

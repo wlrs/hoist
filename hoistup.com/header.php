@@ -10,7 +10,6 @@
         <title><?=$page['title']?><? if($page['url'] != '/') echo " | Hoist" ?></title>
 
         <link href="/style.css" rel="stylesheet">
-        <link href="/prettify.css" rel="stylesheet">
 
         <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
