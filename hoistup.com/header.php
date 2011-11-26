@@ -9,6 +9,11 @@
 
         <title><?=$page['title']?><? if($page['url'] != '/') echo " | Hoist" ?></title>
 
+        <? if($_SERVER['SERVER_NAME'] == 'hoistup.com'){ ?>
+            <script type="text/javascript" src="http://use.typekit.com/qvc8urq.js"></script>
+            <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <? } ?>
+
         <link href="/style.css" rel="stylesheet">
 
         <!--[if lt IE 9]>
@@ -31,9 +36,13 @@
         </div>
    
     <? /*
+
+        //you would normally do something like this for page headlines:
+
         <div id="page_title">
             <h2><?=$page['headline']?></h2>
         </div>
+        
         */
     ?>
 
