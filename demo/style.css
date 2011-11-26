@@ -395,6 +395,3 @@ pre {
     margin: 0.75em 2.625em 0;
   }
 }
-.wf-loading #header, .wf-loading h2, .wf-loading h3 {
-  visibility: none;
-}
